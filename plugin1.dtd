@@ -1,0 +1,26 @@
+<!ELEMENT plugin (extension+)>
+<!ELEMENT extension (category?,command?,handler?,menuContribution*)>
+<!ATTLIST extension point NMTOKEN #REQUIRED>
+<!ELEMENT category (#PCDATA)>
+<!ATTLIST category id CDATA #REQUIRED>
+<!ATTLIST category name CDATA #REQUIRED>
+<!ELEMENT command (#PCDATA)>
+<!ATTLIST command categoryId CDATA #IMPLIED>
+<!ATTLIST command description CDATA #IMPLIED>
+<!ATTLIST command id CDATA #REQUIRED>
+<!ATTLIST command name CDATA #IMPLIED>
+<!ATTLIST command commandId CDATA #IMPLIED>
+<!ATTLIST command mnemonic CDATA #IMPLIED>
+<!ATTLIST command icon CDATA #IMPLIED>
+<!ATTLIST command tooltip CDATA #IMPLIED>
+<!ELEMENT handler (#PCDATA)>
+<!ATTLIST handler commandId CDATA #REQUIRED>
+<!ATTLIST handler class CDATA #REQUIRED>
+<!ELEMENT menuContribution (menu?,toolbar?)>
+<!ATTLIST menuContribution locationURI CDATA #REQUIRED>
+<!ELEMENT menu (command)>
+<!ATTLIST menu id CDATA #REQUIRED>
+<!ATTLIST menu label CDATA #REQUIRED>
+<!ATTLIST menu mnemonic CDATA #REQUIRED>
+<!ELEMENT toolbar (command)>
+<!ATTLIST toolbar id CDATA #REQUIRED>
